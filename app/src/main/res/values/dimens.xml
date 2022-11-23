@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="check_circle">45dp</dimen>
+    <dimen name="generate_circle">55dp</dimen>
+
+    <dimen name="margin_ball">5dp</dimen>
+    <dimen name="margin_ball2">10dp</dimen>
+
+    <dimen name="margin_fc_item">15dp</dimen>
+
+    <dimen name="text_fc_ball">20sp</dimen>
+    <dimen name="text_fg_ball">20sp</dimen>
+    <dimen name="text_round">30sp</dimen>
+</resources>
