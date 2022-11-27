@@ -2,7 +2,7 @@ package com.ggidid.lotto.retrofit.model
 
 import com.google.gson.annotations.SerializedName
 
-data class LottoBody (
+data class LottoInfo (
     @SerializedName("totSellamnt")
     val totSellamnt: String,
 
