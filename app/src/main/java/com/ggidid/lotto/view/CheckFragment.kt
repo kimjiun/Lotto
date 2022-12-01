@@ -25,9 +25,11 @@ class CheckFragment : Fragment() {
         binding.lifecycleOwner = this
 
         viewModel = ViewModelProvider(this).get(CheckViewModel::class.java)
+
+        /*
         viewModel.getLottoInfoLiveData().observe(viewLifecycleOwner, Observer {resp ->
             if(resp != null){
-                binding.roundText.text = "${resp.drwNo} ${getString(R.string.fragement_check_round)}"
+                binding.roundText.text = "${resp.drwNo}"
                 binding.firstNumber.text = resp.drwtNo1
                 binding.secondNumber.text = resp.drwtNo2
                 binding.thirdNumber.text = resp.drwtNo3
@@ -37,6 +39,7 @@ class CheckFragment : Fragment() {
                 binding.bonusNumber.text = resp.bnusNo
             }
         })
+         */
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this

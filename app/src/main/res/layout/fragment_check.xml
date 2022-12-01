@@ -16,13 +16,24 @@
         android:gravity="center"
         tools:context=".view.CheckFragment">
 
-        <TextView
-            android:id="@+id/roundText"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fragement_check_round"
-            android:textSize="@dimen/text_round"
-            android:layout_marginBottom="@dimen/margin_fc_item" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/roundText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.lottoInfoData.drwNo}"
+                android:textSize="@dimen/text_round"
+                android:layout_marginBottom="@dimen/margin_fc_item" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fragement_check_round"
+                android:textSize="@dimen/text_round"
+                android:layout_marginBottom="@dimen/margin_fc_item" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,9 +55,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="44"
-                    android:textSize="@dimen/text_fc_ball"
-                    android:textColor="@color/white" />
+                    android:text="@{viewModel.lottoInfoData.drwtNo1}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_fc_ball" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -65,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="1"
+                    android:text="@{viewModel.lottoInfoData.drwtNo2}"
                     android:textSize="@dimen/text_fc_ball"
                     android:textColor="@color/white" />
             </RelativeLayout>
@@ -86,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="1"
+                    android:text="@{viewModel.lottoInfoData.drwtNo3}"
                     android:textSize="@dimen/text_fc_ball"
                     android:textColor="@color/white" />
             </RelativeLayout>
@@ -107,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="1"
+                    android:text="@{viewModel.lottoInfoData.drwtNo4}"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_fc_ball" />
             </RelativeLayout>
@@ -128,7 +139,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="1"
+                    android:text="@{viewModel.lottoInfoData.drwtNo5}"
                     android:textSize="@dimen/text_fc_ball"
                     android:textColor="@color/white" />
             </RelativeLayout>
@@ -149,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="1"
+                    android:text="@{viewModel.lottoInfoData.drwtNo6}"
                     android:textSize="@dimen/text_fc_ball"
                     android:textColor="@color/white" />
             </RelativeLayout>
@@ -170,7 +181,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="1"
+                    android:text="@{viewModel.lottoInfoData.bnusNo}"
                     android:textSize="@dimen/text_fc_ball"
                     android:textColor="@color/white" />
             </RelativeLayout>
