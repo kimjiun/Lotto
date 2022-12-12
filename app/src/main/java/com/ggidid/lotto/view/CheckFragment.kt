@@ -26,21 +26,6 @@ class CheckFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(CheckViewModel::class.java)
 
-        /*
-        viewModel.getLottoInfoLiveData().observe(viewLifecycleOwner, Observer {resp ->
-            if(resp != null){
-                binding.roundText.text = "${resp.drwNo}"
-                binding.firstNumber.text = resp.drwtNo1
-                binding.secondNumber.text = resp.drwtNo2
-                binding.thirdNumber.text = resp.drwtNo3
-                binding.fourthNumber.text = resp.drwtNo4
-                binding.fifthNumber.text = resp.drwtNo5
-                binding.sixthNumber.text = resp.drwtNo6
-                binding.bonusNumber.text = resp.bnusNo
-            }
-        })
-         */
-
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
