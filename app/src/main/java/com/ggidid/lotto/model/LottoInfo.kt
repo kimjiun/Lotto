@@ -1,8 +1,15 @@
-package com.ggidid.lotto.retrofit.model
+package com.ggidid.lotto.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class LottoInfo (
+    @PrimaryKey
+    @SerializedName("drwNo")
+    val drwNo: String,
+
     @SerializedName("totSellamnt")
     val totSellamnt: String,
 
@@ -32,9 +39,6 @@ data class LottoInfo (
 
     @SerializedName("firstAccumamnt")
     val firstAccumamnt: String,
-
-    @SerializedName("drwNo")
-    val drwNo: String,
 
     @SerializedName("drwtNo2")
     val drwtNo2: String,

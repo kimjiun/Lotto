@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">Lotto</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- COMMON -->
+    <string name="won">&#160;원</string>
+
+    <!-- TAB TITLE -->
+    <string name="tab_title_home">홈</string>
+    <string name="tab_title_history">당첨 기록</string>
+    <string name="tab_title_generate">번호 생성</string>
+
+    <!-- HOME FRAGMENT -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="fragement_check_round">&#160;회 당첨 번호</string>
+    <string name="fragement_home_round">&#160;회 당첨 번호</string>
+    <string name="fragement_home_first_win_prize">1등 당첨액 :&#160;</string>
 </resources>

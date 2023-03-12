@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ggidid.lotto.Constants
-import com.ggidid.lotto.retrofit.model.LottoInfo
+import com.ggidid.lotto.model.LottoInfo
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

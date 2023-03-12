@@ -1,6 +1,6 @@
 package com.ggidid.lotto.retrofit
 
-import com.ggidid.lotto.retrofit.model.LottoInfo
+import com.ggidid.lotto.model.LottoInfo
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET

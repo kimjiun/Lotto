@@ -1,4 +1,4 @@
-package com.ggidid.lotto
+package com.ggidid.lotto.viewmodel
 
 import androidx.lifecycle.ViewModel
 

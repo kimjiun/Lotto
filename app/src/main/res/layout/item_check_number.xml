@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
             name="viewModel"
-            type="com.ggidid.lotto.viewmodel.CheckViewModel" />
+            type="com.ggidid.lotto.viewmodel.HomeViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
-        tools:context=".view.CheckFragment">
-
+        android:gravity="center_horizontal">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -30,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fragement_check_round"
+                android:text="@string/fragement_home_round"
                 android:textSize="@dimen/text_round"
                 android:layout_marginBottom="@dimen/margin_fc_item" />
         </LinearLayout>
@@ -187,5 +184,28 @@
             </RelativeLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/fragement_home_first_win_prize"/>
+
+            <TextView
+                android:id="@+id/first_prize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@{viewModel.lottoInfoData.firstWinamnt}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/won"/>
+        </LinearLayout>
     </LinearLayout>
 </layout>
