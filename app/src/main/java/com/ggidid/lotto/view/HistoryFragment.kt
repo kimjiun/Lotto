@@ -33,10 +33,8 @@ class HistoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getLottoInfo()
+        //viewModel.getLottoInfo()
 
-        binding.swipeLayout.setOnRefreshListener {
-
-        }
+       // binding.swipeLayout.setOnRefreshListener {}
     }
 }

@@ -16,7 +16,10 @@ interface LottoInfoDao {
     fun select(): List<LottoInfo>
 
     @Insert
-    fun insert(history: List<LottoInfo>)
+    fun insert(lottoInfo: LottoInfo)
+
+    @Insert
+    fun insertAll(lottoInfo: List<LottoInfo>)
 
     @Query("DELETE FROM LottoInfo")
     fun clearAll()

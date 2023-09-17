@@ -23,14 +23,7 @@
                 android:id="@+id/roundText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.lottoInfoData.drwNo}"
-                android:textSize="@dimen/text_round"
-                android:layout_marginBottom="@dimen/margin_fc_item" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fragement_home_round"
+                android:text="@{@string/fragement_home_round(viewModel.lottoInfoData.drwNo)}"
                 android:textSize="@dimen/text_round"
                 android:layout_marginBottom="@dimen/margin_fc_item" />
         </LinearLayout>

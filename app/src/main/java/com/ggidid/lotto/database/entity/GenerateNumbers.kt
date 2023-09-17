@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class GenerateNumbers(
     @PrimaryKey
-    val index: Int,
+    val no: Int,
     val number1: Int,
     val number2: Int,
     val number3: Int,

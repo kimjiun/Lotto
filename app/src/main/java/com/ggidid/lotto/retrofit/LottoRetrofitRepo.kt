@@ -23,17 +23,18 @@ class LottoRetrofitRepo (application: Application){
                     val result = response.body()
                     //Log.d(TAG, "RST : ${response.body()}")
 
-                    if (result?.returnValue == "fail") {
-                        getLottoInfo(round - 1)
-                    } else {
-                        Log.d(TAG, "SUCCESS")
-                        lottoInfoData.postValue(result)
+                    result?.let {
+                        if (result.returnValue == "fail") {
+                            getLottoInfo(round - 1)
+                        } else {
+                            Log.d(TAG, "SUCCESS")
+                            lottoInfoData.postValue(result)
+                        }
                     }
                 }
             }
 
             override fun onFailure(call: Call<LottoInfo>, t: Throwable) {
-                lottoInfoData.postValue(null)
                 Log.d("JIUN","T : ${t}")
             }
         })

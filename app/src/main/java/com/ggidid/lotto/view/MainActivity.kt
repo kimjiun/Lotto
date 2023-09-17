@@ -23,18 +23,18 @@ class MainActivity : AppCompatActivity() {
         val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val list = mutableListOf<GenerateNumbers>()
+        list.add(GenerateNumbers(1, 1, 2, 3, 4, 5,6 ,7))
+
+
         val db = AppDataBase.getInstance(this@MainActivity)
 
-        val list = mutableListOf<GenerateNumbers>()
-        list.add(GenerateNumbers(1, 2, 3, 4, 5,6 ,7, 8))
-
         GlobalScope.launch(Dispatchers.IO) {
-            db?.generateNumberDao()?.insert(list)
+            //db?.generateNumberDao()?.insert(list)
         }
 
         binding.pager.adapter = ViewPagerAdapter(this)
         TabLayoutMediator(binding.tabLayout, binding.pager){ tab, position ->
-
             when(position){
                 0 -> tab.text = getString(R.string.tab_title_home)
                 1 -> tab.text = getString(R.string.tab_title_history)
