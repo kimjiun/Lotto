@@ -2,20 +2,24 @@ package com.ggidid.lotto.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.bumptech.glide.Glide
 import com.ggidid.lotto.R
 import com.ggidid.lotto.adapter.ViewPagerAdapter
 import com.ggidid.lotto.database.AppDataBase
 import com.ggidid.lotto.database.entity.GenerateNumbers
 import com.ggidid.lotto.databinding.ActivityMainBinding
+import com.ggidid.lotto.viewmodel.MainViewModel
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     val TAG = "JIUN/${javaClass.name}"
     val LOGO_IMAGE_URL = "https://www.dhlottery.co.kr/images/layout/logo-header.png"
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

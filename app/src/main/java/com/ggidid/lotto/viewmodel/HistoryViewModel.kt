@@ -4,8 +4,11 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.ggidid.lotto.database.AppDataBase
 import com.ggidid.lotto.retrofit.LottoFactory
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HistoryViewModel(application: Application): AndroidViewModel(application) {
+@HiltViewModel
+class HistoryViewModel @Inject constructor(application: Application): AndroidViewModel(application) {
     val TAG = "JIUN/${javaClass.name}"
     val db = AppDataBase.getInstance(application)
     val apiService = LottoFactory().create()

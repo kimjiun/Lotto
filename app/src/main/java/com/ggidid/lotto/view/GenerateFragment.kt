@@ -7,13 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.ggidid.lotto.R
 import com.ggidid.lotto.databinding.FragmentGenerateBinding
 import com.ggidid.lotto.viewmodel.GenerateViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GenerateFragment : Fragment() {
     lateinit var binding: FragmentGenerateBinding
+    val viewModel: GenerateViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +27,6 @@ class GenerateFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_generate, container, false)
 
         binding.lifecycleOwner = this
-        val viewModel = ViewModelProvider(this).get(GenerateViewModel::class.java)
         binding.viewModel = viewModel
         
         return binding.root

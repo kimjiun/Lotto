@@ -6,8 +6,11 @@ import androidx.lifecycle.LiveData
 import com.ggidid.lotto.CommonFunc
 import com.ggidid.lotto.retrofit.LottoRetrofitRepo
 import com.ggidid.lotto.model.LottoInfo
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HomeViewModel(application: Application): AndroidViewModel(application) {
+@HiltViewModel
+class HomeViewModel @Inject constructor (private val application: Application): AndroidViewModel(application) {
     val TAG = "JIUN/${javaClass.name}"
 
     var lottoRetrofitRepo: LottoRetrofitRepo

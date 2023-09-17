@@ -5,9 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bumptech.glide.Glide.init
+import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.*
+import javax.inject.Inject
 
-class GenerateViewModel: ViewModel() {
+@HiltViewModel
+class GenerateViewModel @Inject constructor(): ViewModel() {
     val TAG = "JIUN/${javaClass.name}"
 
     var _numbers: MutableLiveData<MutableList<Int>> = MutableLiveData()
