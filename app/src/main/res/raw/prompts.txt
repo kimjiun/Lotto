@@ -15,3 +15,13 @@ room db 설정을 해주고 해당파일의 첫줄을 참조해서 column이 아
 "회차, 날짜, 첫번째 번호, 두번째 번호, 세번째 번호, 네번째 번호, 다섯번째 번호, 여섯번째 번호, 보너스 번호"
 
 곧바로 데이터베이스가 생성되지 않는 원인이 뭐야? application class에서 앱이 설치될때 처리를 해줘야하나?
+
+최신 로또 번호 조회 api 응답 클래스를 만들줘 형식은 다음과 같아
+{"totSellamnt":3681782000,"returnValue":"success","drwNoDate":"2002-12-07",
+"firstWinamnt":0,"drwtNo6":40,"drwtNo4":33, "firstPrzwnerCo":0,"drwtNo5":37,
+"bnusNo":16,"firstAccumamnt":863604600,"drwNo":1,"drwtNo2":23,"drwtNo3":29,"drwtNo1":10}
+
+
+
+
+
