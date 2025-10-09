@@ -7,5 +7,5 @@ import com.jiun.lotto.data.local.entity.LottoHistoryEntity
 
 @Database(entities = [LottoHistoryEntity::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun lottoDao(): LottoHistoryDao
+    abstract fun lottoHistoryDao(): LottoHistoryDao
 }

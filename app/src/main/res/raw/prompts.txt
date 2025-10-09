@@ -1,3 +1,5 @@
+# gemini 에 질문한 내용을 기록
+
 현대 안드로이드 프로젝트에서 주로 사용되는 아래의 라이브러리들을 추가해주고 기본설정을 해줘
 의존성 주입은 hilt
 네트워킹은 okhttp + retrofit, json 파싱은 kotlin serialization
@@ -20,6 +22,12 @@ room db 설정을 해주고 해당파일의 첫줄을 참조해서 column이 아
 {"totSellamnt":3681782000,"returnValue":"success","drwNoDate":"2002-12-07",
 "firstWinamnt":0,"drwtNo6":40,"drwtNo4":33, "firstPrzwnerCo":0,"drwtNo5":37,
 "bnusNo":16,"firstAccumamnt":863604600,"drwNo":1,"drwtNo2":23,"drwtNo3":29,"drwtNo1":10}
+
+okhttp, retrofit client를 hilt로 생성하는 코드를 작성해줘
+최신 로또 번호 조회 api url은 아래와 같아
+https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=1
+
+로컬 db의 가장 최신의 round 값을 확인하여 다음 값으로 getLottoNumber api를 요청하고 returnValue가 fail인 경우엔 최신의 round row 값을 반환하는 함수를 만들어줘
 
 
 

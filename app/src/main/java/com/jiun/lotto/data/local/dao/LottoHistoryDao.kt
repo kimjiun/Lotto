@@ -16,4 +16,7 @@ interface LottoHistoryDao {
 
     @Query("SELECT * FROM lotto_history ORDER BY round DESC")
     suspend fun getLottoHistory(): List<LottoHistoryEntity>
+
+    @Query("SELECT * FROM lotto_history ORDER BY round DESC LIMIT 1")
+    suspend fun getLatestLottoHistory(): LottoHistoryEntity?
 }

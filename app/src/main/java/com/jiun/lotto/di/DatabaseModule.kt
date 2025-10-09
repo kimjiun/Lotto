@@ -84,6 +84,6 @@ object DatabaseModule {
 
     @Provides
     fun provideLottoDao(appDatabase: AppDatabase): LottoHistoryDao {
-        return appDatabase.lottoDao()
+        return appDatabase.lottoHistoryDao()
     }
 }

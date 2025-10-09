@@ -16,7 +16,7 @@ class LottoApplication : Application() {
         super.onCreate()
         // Force database initialization by using it
         kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.IO).launch {
-            appDatabase.lottoDao().getLottoHistory()
+            appDatabase.lottoHistoryDao().getLottoHistory()
         }
     }
 }

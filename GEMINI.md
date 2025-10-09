@@ -33,7 +33,7 @@
     - 공공 로또 API에서 데이터를 가져오기 위한 Retrofit `ApiService` 생성.
 - **로컬(Local):**
     - 저장된 로또 번호를 위한 Room `Entity` 정의.
-    - 데이터베이스 작업을 위한 `LottoDao` 생성 (CRUD).
+    - 데이터베이스 작업을 위한 `LottoHistoryDao` 생성 (CRUD).
     - Room `AppDatabase` 설정.
 
 ### 3단계: 도메인 계층

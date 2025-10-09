@@ -18,4 +18,7 @@ data class LottoResponse(
     val firstPrzwnerCo: Int, // 1등 당첨인원
     val bnusNo: Int, // 보너스 번호
     val firstAccumamnt: Long, // 1등 당첨금 총액
-)
+){
+    val isSuccess: Boolean
+        get() = returnValue == "success"
+}
