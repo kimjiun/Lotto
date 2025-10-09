@@ -1,0 +1,35 @@
+# gemini 에 질문한 내용을 기록
+
+현대 안드로이드 프로젝트에서 주로 사용되는 아래의 라이브러리들을 추가해주고 기본설정을 해줘
+의존성 주입은 hilt
+네트워킹은 okhttp + retrofit, json 파싱은 kotlin serialization
+내부 db는 room
+
+@gradle/libs.versions.toml 라이브러리들을 확인하고
+안드로이드 프로젝트에서 사용할 GEMINI.md 파일을 만들어줘
+한국의 로또 번호를 확인하고 랜덤으로 번호를 생성하는 앱을 만들거야
+
+@gradle/libs.versions.toml 라이브러리들을 확인하고
+현대 안드로이드 프로덕션 프로젝트에서 사용하는 패키지 구조를 만들어줘
+
+@app/src/main/res/raw/lotto_history.csv 파일은 첫회차부터의 로또 번호를 저장한 파일이야,
+room db 설정을 해주고 해당파일의 첫줄을 참조해서 column이 아래와 같은 테이블을 만들어줘
+"회차, 날짜, 첫번째 번호, 두번째 번호, 세번째 번호, 네번째 번호, 다섯번째 번호, 여섯번째 번호, 보너스 번호"
+
+곧바로 데이터베이스가 생성되지 않는 원인이 뭐야? application class에서 앱이 설치될때 처리를 해줘야하나?
+
+최신 로또 번호 조회 api 응답 클래스를 만들줘 형식은 다음과 같아
+{"totSellamnt":3681782000,"returnValue":"success","drwNoDate":"2002-12-07",
+"firstWinamnt":0,"drwtNo6":40,"drwtNo4":33, "firstPrzwnerCo":0,"drwtNo5":37,
+"bnusNo":16,"firstAccumamnt":863604600,"drwNo":1,"drwtNo2":23,"drwtNo3":29,"drwtNo1":10}
+
+okhttp, retrofit client를 hilt로 생성하는 코드를 작성해줘
+최신 로또 번호 조회 api url은 아래와 같아
+https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=1
+
+로컬 db의 가장 최신의 round 값을 확인하여 다음 값으로 getLottoNumber api를 요청하고 returnValue가 fail인 경우엔 최신의 round row 값을 반환하는 함수를 만들어줘
+
+
+
+
+
