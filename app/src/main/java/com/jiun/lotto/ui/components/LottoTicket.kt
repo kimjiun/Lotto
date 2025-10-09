@@ -1,5 +1,7 @@
 package com.jiun.lotto.ui.components
 
+import android.R.attr.contentDescription
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -50,10 +52,10 @@ fun LottoTicket(lottoData: LottoData) {
             )
             Spacer(modifier = Modifier.height(24.dp))
 
-            Row(
+            FlowRow(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally),
-                verticalAlignment = Alignment.CenterVertically
+                verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically)
             ) {
                 lottoData.numbers.forEach { number ->
                     LottoBall(number = number)
@@ -61,7 +63,7 @@ fun LottoTicket(lottoData: LottoData) {
                 Icon(
                     imageVector = Icons.Filled.Add,
                     contentDescription = "Plus Icon",
-                    modifier = Modifier.size(24.dp)
+                    modifier = Modifier.align(Alignment.CenterVertically).size(24.dp)
                 )
                 LottoBall(number = lottoData.bonusNumber)
             }
