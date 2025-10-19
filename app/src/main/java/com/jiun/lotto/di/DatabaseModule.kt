@@ -42,7 +42,7 @@ object DatabaseModule {
                     prePopulateDatabase(context, lottoHistoryDaoProvider.get())
                 }
             }
-        }).build()
+        }).fallbackToDestructiveMigration(false).build()
     }
 
     private suspend fun prePopulateDatabase(context: Context, lottoHistoryDao: LottoHistoryDao) {
@@ -85,5 +85,10 @@ object DatabaseModule {
     @Provides
     fun provideLottoDao(appDatabase: AppDatabase): LottoHistoryDao {
         return appDatabase.lottoHistoryDao()
+    }
+
+    @Provides
+    fun provideGeneratedLottoDao(appDatabase: AppDatabase): com.jiun.lotto.data.local.dao.GeneratedLottoDao {
+        return appDatabase.generatedLottoDao()
     }
 }
