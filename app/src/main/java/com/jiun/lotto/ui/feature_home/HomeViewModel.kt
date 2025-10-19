@@ -3,6 +3,7 @@ package com.jiun.lotto.ui.feature_home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jiun.lotto.domain.common.Resource
+import com.jiun.lotto.domain.usecase.GetGeneratedLottoUseCase
 import com.jiun.lotto.domain.usecase.GetLatestLottoDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +16,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getLatestLottoDataUseCase: GetLatestLottoDataUseCase
+    private val getLatestLottoDataUseCase: GetLatestLottoDataUseCase,
+    private val getGeneratedLottoUseCase: GetGeneratedLottoUseCase
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HomeState())
@@ -23,6 +25,7 @@ class HomeViewModel @Inject constructor(
 
     init {
         getLatestLotto()
+        getRecentGeneratedLotto()
     }
 
     private fun getLatestLotto() {
@@ -32,10 +35,26 @@ class HomeViewModel @Inject constructor(
                     _state.value = HomeState(isLoading = true)
                 }
                 is Resource.Success -> {
-                    _state.value = HomeState(lottoData = result.data)
+                    _state.value = _state.value.copy(lottoData = result.data, isLoading = false)
                 }
                 is Resource.Error -> {
                     _state.value = HomeState(error = result.message)
+                }
+            }
+        }.launchIn(viewModelScope)
+    }
+
+    private fun getRecentGeneratedLotto() {
+        getGeneratedLottoUseCase().onEach { result ->
+            when (result) {
+                is Resource.Loading -> {
+                    _state.value = _state.value.copy(isLoading = true)
+                }
+                is Resource.Success -> {
+                    _state.value = _state.value.copy(recentGeneratedLotto = result.data?.firstOrNull(), isLoading = false)
+                }
+                is Resource.Error -> {
+                    _state.value = _state.value.copy(error = result.message, isLoading = false)
                 }
             }
         }.launchIn(viewModelScope)

@@ -24,7 +24,7 @@ import com.jiun.lotto.domain.model.GeneratedLotto
 @Composable
 fun GeneratedLottoItem(
     lotto: GeneratedLotto,
-    onDelete: () -> Unit
+    onDelete: (() -> Unit)? = null
 ) {
     Card(
         modifier = Modifier
@@ -48,8 +48,11 @@ fun GeneratedLottoItem(
                     }
                 }
             }
-            IconButton(onClick = onDelete) {
-                Icon(Icons.Default.Delete, contentDescription = "Delete")
+
+            onDelete?.let {
+                IconButton(onClick = onDelete) {
+                    Icon(Icons.Default.Delete, contentDescription = "Delete")
+                }
             }
         }
     }
