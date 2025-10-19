@@ -5,6 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -12,6 +13,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import javax.inject.Singleton
+import timber.log.Timber
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -21,9 +23,22 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
+        val loggingInterceptor = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
+            override fun log(message: String) {
+                Timber.tag("OkHttp_ALL").d(message)
+                if ((!message.startsWith("{") && !message.startsWith("["))) {
+                    if(message.contains("https://") || message.contains("http://"))
+                        Timber.tag("OkHttp_REQ").d(message)
+                    return
+                }
+
+                try { // Timber 와 Gson setPrettyPrinting 를 이용해 json 을 보기 편하게 표시해준다.
+                    Timber.tag("Response").d(message)
+                } catch (m: SerializationException) {
+                    Timber.tag("Response error").e(m)
+                }
+            }
+        }).apply { level = HttpLoggingInterceptor.Level.BODY }
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .build()
