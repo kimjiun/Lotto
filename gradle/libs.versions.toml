@@ -17,6 +17,7 @@ room = "2.8.2"
 navigation = "2.8.0-beta06"
 materialIconsExtended = "1.6.8"
 hiltNavigationCompose = "1.2.0"
+timber = "5.0.1"
 
 
 [libraries]
@@ -44,7 +45,7 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
-
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
