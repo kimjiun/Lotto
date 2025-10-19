@@ -33,6 +33,10 @@ class LottoRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun getLottoHistory(): List<LottoData> {
+        return lottoHistoryDao.getLottoHistory().map { it.toDomain() }
+    }
+
     private fun LottoResponse.toEntity(): LottoHistoryEntity {
         return LottoHistoryEntity(
             round = this.drwNo,

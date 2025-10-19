@@ -18,12 +18,14 @@ import androidx.navigation.compose.rememberNavController
 import com.jiun.lotto.ui.feature_generation.NumberGeneratorScreen
 import com.jiun.lotto.ui.feature_winning_number.WinningNumberScreen
 import com.jiun.lotto.ui.navigation.Screen
+import com.jiun.lotto.ui.feature_history.HistoryScreen
 
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
     val screens = listOf(
         Screen.WinningNumber,
+        Screen.History,
         Screen.NumberGenerator,
     )
 
@@ -57,6 +59,7 @@ fun MainScreen() {
             Modifier.padding(innerPadding)
         ) {
             composable(Screen.WinningNumber.route) { WinningNumberScreen() }
+            composable(Screen.History.route) { HistoryScreen() }
             composable(Screen.NumberGenerator.route) { NumberGeneratorScreen() }
         }
     }

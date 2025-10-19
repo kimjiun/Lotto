@@ -4,4 +4,5 @@ import com.jiun.lotto.domain.model.LottoData
 
 interface LottoRepository {
     suspend fun getLatestLotto(): LottoData?
+    suspend fun getLottoHistory(): List<LottoData>
 }
