@@ -1,4 +1,4 @@
-package com.jiun.lotto.ui.feature_winning_number
+package com.jiun.lotto.ui.feature_home
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,8 +17,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.jiun.lotto.ui.components.LottoTicket
 
 @Composable
-fun WinningNumberScreen(
-    viewModel: WinningNumberViewModel = hiltViewModel()
+fun HomeScreen(
+    viewModel: HomeViewModel = hiltViewModel()
 ) {
     val state by viewModel.state.collectAsState()
 

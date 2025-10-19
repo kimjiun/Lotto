@@ -9,7 +9,7 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class GetLatestWinningNumbersUseCase @Inject constructor(
+class GetLatestLottoDataUseCase @Inject constructor(
     private val repository: LottoRepository
 ) {
     operator fun invoke(): Flow<Resource<LottoData>> = flow {
